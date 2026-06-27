@@ -3,12 +3,12 @@
 Copy and paste this prompt into Codex or Claude Code after placing this folder in your project.
 
 ```text
-You are helping me build RedactKit.
+You are helping me build Trizla.
 
 Read every markdown file in this project context folder before coding.
 
 Product:
-RedactKit is a local-first web app that sanitizes sensitive text before users paste it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools. It detects likely sensitive info locally, replaces approved detections with stable placeholders, lets users copy the sanitized prompt, then restores placeholders after the AI response.
+Trizla is a local-first web app that sanitizes sensitive text before users paste it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools. It detects likely sensitive info locally, replaces approved detections with stable placeholders, lets users copy the sanitized prompt, then restores placeholders after the AI response.
 
 Hard constraints:
 - No backend.
@@ -49,9 +49,9 @@ Core features:
 11. Copy restored output button.
 12. Clear/delete local data button if storage is used.
 13. Visible privacy copy:
-   “Runs locally in your browser. Text is not uploaded by RedactKit.”
+   “Runs locally in your browser. Text is not uploaded by Trizla.”
 14. Visible disclaimer:
-   “RedactKit is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.”
+   “Trizla is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.”
 
 Implementation:
 - Put detection/redaction/restore logic in pure TypeScript functions.

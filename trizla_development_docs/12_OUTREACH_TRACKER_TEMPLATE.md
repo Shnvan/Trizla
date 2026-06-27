@@ -1,6 +1,6 @@
 # Outreach Tracker Template
 
-Use this to track RedactKit validation outreach during the first weeks of recruiter discovery. Copy the table below into a spreadsheet, Notion board, or Linear list and update entries weekly.
+Use this to track Trizla validation outreach during the first weeks of recruiter discovery. Copy the table below into a spreadsheet, Notion board, or Linear list and update entries weekly.
 
 Goal of this tracker: turn loose conversations into honest, comparable signals - pain level, repeat usage, willingness to pay - so we hit (or miss) the kill metrics in `12_DECISION_LOG_AND_KILL_METRICS.md` deliberately, not by accident.
 

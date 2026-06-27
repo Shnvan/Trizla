@@ -2,7 +2,7 @@
 
 ## MVP Decision
 
-There is no database in RedactKit v0.1.
+There is no database in Trizla v0.1.
 
 This file exists to document storage guardrails and future triggers. It is not an active implementation plan.
 

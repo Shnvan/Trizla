@@ -2,7 +2,7 @@
 
 ## Testing philosophy
 
-RedactKit must be boringly reliable for text replacement.
+Trizla must be boringly reliable for text replacement.
 
 The biggest product risk is not fancy UI. It is corrupting the user’s text or failing to restore placeholders.
 

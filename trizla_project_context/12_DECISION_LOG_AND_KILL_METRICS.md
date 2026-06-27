@@ -2,7 +2,7 @@
 
 ## Current decision
 
-Build a validation MVP for RedactKit.
+Build a validation MVP for Trizla.
 
 ## Chosen wedge
 
@@ -130,7 +130,7 @@ Do not build desktop app, browser extension, or subscriptions until:
 
 At day 30, choose one:
 
-1. Continue RedactKit for recruiters.
-2. Continue RedactKit for agencies/VAs.
+1. Continue Trizla for recruiters.
+2. Continue Trizla for agencies/VAs.
 3. Pivot to offline downloadable privacy utility.
 4. Kill product and return to survivor list.

@@ -1,14 +1,14 @@
-# RedactKit Development Docs
+# Trizla Development Docs
 
 ## Purpose
 
-This folder turns the source context in `redactkit_project_context/` into developer-facing work documents by area.
+This folder turns the source context in `trizla_project_context/` into developer-facing work documents by area.
 
 The source context remains the archive of original product thinking. These files are the working docs for planning, implementation, QA, and handoff.
 
 ## Product Summary
 
-RedactKit is a local-first privacy utility that helps users sanitize sensitive work text before pasting it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools.
+Trizla is a local-first privacy utility that helps users sanitize sensitive work text before pasting it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools.
 
 Core loop:
 
@@ -17,7 +17,7 @@ Core loop:
 3. Review and adjust detections.
 4. Replace approved values with stable placeholders.
 5. Copy sanitized text into an AI tool.
-6. Paste the AI response back into RedactKit.
+6. Paste the AI response back into Trizla.
 7. Restore placeholders locally.
 8. Copy the restored output.
 

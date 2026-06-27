@@ -1,4 +1,4 @@
-# PRD — RedactKit MVP
+# PRD — Trizla MVP
 
 ## Version
 
@@ -10,7 +10,7 @@ Build the smallest useful product that validates whether users will use a local 
 
 ## Primary user story
 
-As a recruiter, I want to paste candidate information into RedactKit, remove sensitive values with reviewable placeholders, copy the sanitized version into ChatGPT, then restore the placeholders in the AI response.
+As a recruiter, I want to paste candidate information into Trizla, remove sensitive values with reviewable placeholders, copy the sanitized version into ChatGPT, then restore the placeholders in the AI response.
 
 ## Core user stories
 

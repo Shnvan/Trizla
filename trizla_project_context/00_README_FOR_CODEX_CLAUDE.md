@@ -1,8 +1,8 @@
-# RedactKit Project Context Pack
+# Trizla Project Context Pack
 
 ## What this is
 
-This folder contains the full project context for building **RedactKit**, a local-first redaction tool for people who want to use ChatGPT/Claude/Gemini with sensitive work text without manually removing names, emails, phone numbers, client names, company names, IDs, and other private terms.
+This folder contains the full project context for building **Trizla**, a local-first redaction tool for people who want to use ChatGPT/Claude/Gemini with sensitive work text without manually removing names, emails, phone numbers, client names, company names, IDs, and other private terms.
 
 ## How the coding agent should use these files
 
@@ -24,7 +24,7 @@ Read these files before coding:
 
 ## Product in one sentence
 
-**RedactKit sanitizes sensitive text locally before users paste it into AI tools, then restores placeholders after the AI response.**
+**Trizla sanitizes sensitive text locally before users paste it into AI tools, then restores placeholders after the AI response.**
 
 ## Non-negotiables
 
@@ -46,7 +46,7 @@ Read these files before coding:
 3. User reviews detected items.
 4. App replaces approved items with stable placeholders.
 5. User copies sanitized text into ChatGPT/Claude/Gemini.
-6. User pastes AI response back into RedactKit.
+6. User pastes AI response back into Trizla.
 7. App restores placeholders locally.
 8. User copies final restored output.
 
@@ -84,5 +84,5 @@ Do not build authentication, payment, browser extension, desktop app, or cloud s
 ## Suggested first command for the coding agent
 
 ```text
-Read all markdown files in this folder. Then build RedactKit v0.1 as a local-only TypeScript React app. Start with the core flow only. Do not add backend, auth, payments, external APIs, browser extension, or desktop app.
+Read all markdown files in this folder. Then build Trizla v0.1 as a local-only TypeScript React app. Start with the core flow only. Do not add backend, auth, payments, external APIs, browser extension, or desktop app.
 ```

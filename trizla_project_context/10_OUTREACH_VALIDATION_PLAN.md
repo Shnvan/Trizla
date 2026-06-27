@@ -98,7 +98,7 @@ Not selling anything yet. I’m trying to learn if this is a real workflow pain 
 ```text
 Hey [Name] — quick founder question. Do you or your team use ChatGPT/Claude on client notes, reports, ad data, or customer feedback?
 
-I’m building RedactKit: a local-first tool that sanitizes sensitive client text before anyone pastes it into AI.
+I’m building Trizla: a local-first tool that sanitizes sensitive client text before anyone pastes it into AI.
 
 I’m looking for 10 agency people to test whether this saves time or reduces risk. Could I show you a 3-minute demo?
 ```

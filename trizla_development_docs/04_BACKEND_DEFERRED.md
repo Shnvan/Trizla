@@ -2,7 +2,7 @@
 
 ## MVP Decision
 
-There is no backend in RedactKit v0.1.
+There is no backend in Trizla v0.1.
 
 This file exists to prevent accidental backend scope creep and to document future triggers. It is not an active implementation plan.
 

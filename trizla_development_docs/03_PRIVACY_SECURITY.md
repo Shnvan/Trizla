@@ -2,7 +2,7 @@
 
 ## Goal
 
-Make RedactKit trustworthy by keeping the MVP local-first, transparent, and conservative in its claims.
+Make Trizla trustworthy by keeping the MVP local-first, transparent, and conservative in its claims.
 
 The product reduces accidental exposure before users paste text into third-party AI tools. It is not compliance software.
 
@@ -11,13 +11,13 @@ The product reduces accidental exposure before users paste text into third-party
 Use this copy:
 
 ```text
-RedactKit runs locally in your browser. Your pasted text is not uploaded by RedactKit.
+Trizla runs locally in your browser. Your pasted text is not uploaded by Trizla.
 ```
 
 Also use:
 
 ```text
-Runs locally in your browser. Text is not uploaded by RedactKit.
+Runs locally in your browser. Text is not uploaded by Trizla.
 ```
 
 ## Do Not Claim
@@ -74,7 +74,7 @@ Saved terms are stored only in this browser. Anyone with access to this device/b
 ## Required Disclaimer
 
 ```text
-RedactKit is not legal, compliance, or security certification software. It does not guarantee complete anonymization. Always review redactions before using sensitive text with third-party tools.
+Trizla is not legal, compliance, or security certification software. It does not guarantee complete anonymization. Always review redactions before using sensitive text with third-party tools.
 ```
 
 ## Threat Model

@@ -2,20 +2,20 @@
 
 ## Mission
 
-Build RedactKit v0.1: a local-first web app that redacts sensitive text before users paste it into AI tools, then restores placeholders after the AI response.
+Build Trizla v0.1: a local-first web app that redacts sensitive text before users paste it into AI tools, then restores placeholders after the AI response.
 
 ## Read First
 
 Before coding, read:
 
-1. `redactkit_development_docs/00_INDEX.md`
-2. `redactkit_development_docs/01_FRONTEND.md`
-3. `redactkit_development_docs/02_REDACTION_ENGINE.md`
-4. `redactkit_development_docs/03_PRIVACY_SECURITY.md`
-5. `redactkit_development_docs/06_QA_TESTING.md`
-6. `redactkit_development_docs/08_MASTER_TODO.md`
+1. `trizla_development_docs/00_INDEX.md`
+2. `trizla_development_docs/01_FRONTEND.md`
+3. `trizla_development_docs/02_REDACTION_ENGINE.md`
+4. `trizla_development_docs/03_PRIVACY_SECURITY.md`
+5. `trizla_development_docs/06_QA_TESTING.md`
+6. `trizla_development_docs/08_MASTER_TODO.md`
 
-Use `redactkit_project_context/` as the original source archive if more context is needed.
+Use `trizla_project_context/` as the original source archive if more context is needed.
 
 ## Hard Rules
 
@@ -52,7 +52,7 @@ Then add custom terms.
 ## Suggested Prompt for Future Coding Agent
 
 ```text
-Read redactkit_development_docs first, then implement RedactKit v0.1 using React + TypeScript. Build a static local-only app and start with the core redaction/restore flow. Keep detection, sanitization, placeholder mapping, and restore logic in pure functions. Write tests for the core engine. Do not add backend, auth, AI APIs, payments, browser extension, desktop app, database, or cloud storage.
+Read trizla_development_docs first, then implement Trizla v0.1 using React + TypeScript. Build a static local-only app and start with the core redaction/restore flow. Keep detection, sanitization, placeholder mapping, and restore logic in pure functions. Write tests for the core engine. Do not add backend, auth, AI APIs, payments, browser extension, desktop app, database, or cloud storage.
 ```
 
 ## Completion Criteria for v0.1

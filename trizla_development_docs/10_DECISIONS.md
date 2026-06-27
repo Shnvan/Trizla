@@ -2,7 +2,7 @@
 
 ## Current Product Decision
 
-Build RedactKit v0.1 as a validation MVP for local redaction before using AI tools.
+Build Trizla v0.1 as a validation MVP for local redaction before using AI tools.
 
 ## Chosen Wedge
 
@@ -41,7 +41,7 @@ Recruiters and talent sourcers.
 - Use local-only promise.
 - Avoid compliance claims.
 - Avoid regulated medical, legal, financial, and government positioning.
-- Use clear disclaimer that RedactKit does not guarantee complete anonymization.
+- Use clear disclaimer that Trizla does not guarantee complete anonymization.
 
 ## Deferred Decisions
 

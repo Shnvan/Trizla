@@ -2,7 +2,7 @@
 
 ## Goal
 
-Build a simple, trustworthy React interface that lets users complete the full RedactKit loop without instructions.
+Build a simple, trustworthy React interface that lets users complete the full Trizla loop without instructions.
 
 Success means a user can paste source text, review detections, copy sanitized text, paste an AI response, restore placeholders, and copy the restored output in under 2 minutes.
 
@@ -28,7 +28,7 @@ The first usable screen should be the app workflow, not a marketing-only page.
 
 Header:
 
-- RedactKit name.
+- Trizla name.
 - `Local only` badge.
 - `How it works` link.
 - `Clear data` action.
@@ -69,13 +69,13 @@ No upload. No account. Review before copy.
 Privacy copy:
 
 ```text
-Runs locally in your browser. Text is not uploaded by RedactKit.
+Runs locally in your browser. Text is not uploaded by Trizla.
 ```
 
 Disclaimer:
 
 ```text
-RedactKit is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
+Trizla is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
 ```
 
 ## Component Responsibilities

@@ -4,7 +4,7 @@
 
 Primary promise:
 
-> RedactKit runs locally in your browser. Your pasted text is not uploaded by RedactKit.
+> Trizla runs locally in your browser. Your pasted text is not uploaded by Trizla.
 
 Do not say:
 
@@ -66,7 +66,7 @@ If localStorage/sessionStorage/IndexedDB is used, include:
 
 Use this copy:
 
-> RedactKit is not legal, compliance, or security certification software. It does not guarantee complete anonymization. Always review redactions before using sensitive text with third-party tools.
+> Trizla is not legal, compliance, or security certification software. It does not guarantee complete anonymization. Always review redactions before using sensitive text with third-party tools.
 
 ## Threat model for MVP
 
@@ -144,19 +144,19 @@ Riskier:
 
 ## Privacy FAQ
 
-### Does RedactKit upload my text?
+### Does Trizla upload my text?
 
 No. The MVP is designed to run in your browser. Redaction happens locally.
 
-### Does RedactKit use OpenAI or Claude APIs?
+### Does Trizla use OpenAI or Claude APIs?
 
 No. The MVP does not call AI APIs. It prepares text before you use whichever AI tool you choose.
 
-### Is RedactKit compliance software?
+### Is Trizla compliance software?
 
 No. It is a practical local redaction helper. It does not guarantee compliance or complete anonymization.
 
-### Can RedactKit miss sensitive information?
+### Can Trizla miss sensitive information?
 
 Yes. Detection can miss things or mark false positives. Always review before copying.
 

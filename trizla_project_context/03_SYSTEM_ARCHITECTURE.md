@@ -1,4 +1,4 @@
-# System Architecture — RedactKit MVP
+# System Architecture — Trizla MVP
 
 ## Architecture principle
 
@@ -256,4 +256,4 @@ Even local browser apps can expose text through:
 
 Do not overpromise security. Use language like:
 
-> RedactKit reduces accidental exposure by redacting text locally before you paste it into AI tools.
+> Trizla reduces accidental exposure by redacting text locally before you paste it into AI tools.

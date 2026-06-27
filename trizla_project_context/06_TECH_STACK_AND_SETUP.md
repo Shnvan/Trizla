@@ -53,8 +53,8 @@ Tauri can come later after validation.
 For Vite:
 
 ```bash
-npm create vite@latest redactkit -- --template react-ts
-cd redactkit
+npm create vite@latest trizla -- --template react-ts
+cd trizla
 npm install
 npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
 npm install tailwindcss @tailwindcss/vite

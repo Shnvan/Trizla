@@ -1,8 +1,8 @@
-# Product Brief — RedactKit
+# Product Brief — Trizla
 
 ## Product name
 
-RedactKit
+Trizla
 
 ## Category
 
@@ -14,7 +14,7 @@ Local-first privacy utility / AI workflow safety tool.
 
 ## Longer promise
 
-RedactKit helps freelancers, recruiters, agency owners, virtual assistants, consultants, and solo operators safely prepare real work text before pasting it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools.
+Trizla helps freelancers, recruiters, agency owners, virtual assistants, consultants, and solo operators safely prepare real work text before pasting it into ChatGPT, Claude, Gemini, Perplexity, or other AI tools.
 
 It detects likely sensitive information locally, replaces it with stable placeholders, lets the user review every detection, and restores placeholders after the AI response.
 
@@ -111,11 +111,11 @@ The first wedge is:
 
 ## First-use wow moment
 
-The user pastes a real candidate/client/support note and sees RedactKit instantly find names, email, phone number, company, money amount, and custom sensitive terms before they paste into AI.
+The user pastes a real candidate/client/support note and sees Trizla instantly find names, email, phone number, company, money amount, and custom sensitive terms before they paste into AI.
 
 ## Core differentiator
 
-RedactKit is not another AI wrapper. It does not replace ChatGPT or Claude.
+Trizla is not another AI wrapper. It does not replace ChatGPT or Claude.
 
 It sits **before** and **after** the AI tool:
 

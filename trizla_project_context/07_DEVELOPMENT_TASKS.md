@@ -1,4 +1,4 @@
-# Development Tasks — RedactKit v0.1
+# Development Tasks — Trizla v0.1
 
 ## Milestone 1 — Project scaffold
 

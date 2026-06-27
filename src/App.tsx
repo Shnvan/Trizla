@@ -9,7 +9,7 @@ import { SAMPLE_RECRUITER_TEXT } from './lib/sampleText'
 
 const TRUST_STATEMENTS = [
   'Runs locally in your browser',
-  'No upload by RedactKit',
+  'No upload by Trizla',
   'No account required',
   'Review before copy',
 ] as const
@@ -143,7 +143,7 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="header-inner">
-          <span className="brand">RedactKit</span>
+          <span className="brand">Trizla</span>
           <span className="badge">Local only</span>
           <nav className="header-nav" aria-label="Primary">
             <a className="header-link" href="#how-it-works">
@@ -333,7 +333,7 @@ function App() {
 
       <footer className="footer">
         <p>
-          RedactKit is not legal, compliance, or security certification
+          Trizla is not legal, compliance, or security certification
           software. It does not guarantee complete anonymization. Always review
           redactions before using sensitive text with third-party tools.
         </p>
@@ -538,7 +538,7 @@ function HowItWorks() {
 
 const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   {
-    q: 'Does RedactKit upload my text?',
+    q: 'Does Trizla upload my text?',
     a: 'No. The MVP is designed to process text locally in your browser.',
   },
   {
@@ -547,15 +547,15 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Can it miss sensitive information?',
-    a: 'Yes. RedactKit can miss information or flag false positives. Always review the redactions.',
+    a: 'Yes. Trizla can miss information or flag false positives. Always review the redactions.',
   },
   {
     q: 'Is this legal or compliance software?',
-    a: 'No. RedactKit is a practical local helper, not a compliance guarantee.',
+    a: 'No. Trizla is a practical local helper, not a compliance guarantee.',
   },
   {
     q: 'Why not just manually find-and-replace?',
-    a: 'You can. RedactKit is for people who do that repeatedly and want a faster, more reviewable workflow.',
+    a: 'You can. Trizla is for people who do that repeatedly and want a faster, more reviewable workflow.',
   },
   {
     q: 'Where are my custom terms stored?',
@@ -587,7 +587,7 @@ function Cta() {
     <section className="cta" aria-labelledby="cta-title">
       <p className="section-eyebrow">Validation</p>
       <h2 className="section-title" id="cta-title">
-        Ready to test RedactKit on your workflow?
+        Ready to test Trizla on your workflow?
       </h2>
       <p className="cta-body">
         Try the local demo with fake or non-sensitive text, then tell us what
@@ -599,7 +599,7 @@ function Cta() {
         </a>
         <a
           className="secondary-button"
-          href="mailto:ivanliao41@gmail.com?subject=RedactKit%20early%20access"
+          href="mailto:ivanliao41@gmail.com?subject=Trizla%20early%20access"
         >
           Join early access
         </a>

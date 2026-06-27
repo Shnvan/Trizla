@@ -2,7 +2,7 @@
 
 ## Product name
 
-RedactKit
+Trizla
 
 ## Headline options
 
@@ -24,7 +24,7 @@ Recommended first headline for recruiter wedge:
 
 ## Subheadline
 
-> RedactKit finds names, emails, phone numbers, company names, salary details, IDs, and custom sensitive terms locally in your browser. Copy a sanitized version into ChatGPT or Claude, then restore the placeholders after the AI response.
+> Trizla finds names, emails, phone numbers, company names, salary details, IDs, and custom sensitive terms locally in your browser. Copy a sanitized version into ChatGPT or Claude, then restore the placeholders after the AI response.
 
 ## CTA
 
@@ -40,7 +40,7 @@ Secondary:
 
 - Runs locally in your browser
 - No account required
-- No upload by RedactKit
+- No upload by Trizla
 - Review every redaction before copying
 - Restore placeholders after the AI response
 - Works with ChatGPT, Claude, Gemini, Perplexity, or any AI tool
@@ -111,7 +111,7 @@ Start with:
 
 ## What it is not
 
-> RedactKit is not compliance software and does not guarantee complete anonymization. It is a practical local redaction helper. Always review before sharing sensitive text with third-party tools.
+> Trizla is not compliance software and does not guarantee complete anonymization. It is a practical local redaction helper. Always review before sharing sensitive text with third-party tools.
 
 ## Pricing page copy
 
@@ -158,7 +158,7 @@ CTA:
 
 ## FAQ
 
-### Does RedactKit upload my text?
+### Does Trizla upload my text?
 
 No. The MVP is designed to process text locally in your browser.
 
@@ -168,15 +168,15 @@ No. It prepares text before you use those tools.
 
 ### Can it miss sensitive information?
 
-Yes. RedactKit can miss information or flag false positives. Always review the redactions.
+Yes. Trizla can miss information or flag false positives. Always review the redactions.
 
 ### Is this legal or compliance software?
 
-No. RedactKit is a practical local helper, not a compliance guarantee.
+No. Trizla is a practical local helper, not a compliance guarantee.
 
 ### Why not just manually find-and-replace?
 
-You can. RedactKit is for people who do that repeatedly and want a faster, more reviewable workflow.
+You can. Trizla is for people who do that repeatedly and want a faster, more reviewable workflow.
 
 ## Waitlist form questions
 

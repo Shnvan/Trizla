@@ -1,6 +1,6 @@
-# RedactKit
+# Trizla
 
-RedactKit is a local-first web app for sanitizing sensitive text before pasting it into AI tools, then restoring placeholders after the AI response.
+Trizla is a local-first web app for sanitizing sensitive text before pasting it into AI tools, then restoring placeholders after the AI response.
 
 The MVP flow is:
 
@@ -58,7 +58,7 @@ Vite will serve the built app from `dist` and print a local preview URL.
 
 ## Static Deployment
 
-RedactKit deploys as a static Vite app.
+Trizla deploys as a static Vite app.
 
 - Build command: `npm run build`
 - Output directory: `dist`
@@ -83,4 +83,4 @@ Do not add deployment SDKs, serverless functions, API routes, auth, database, an
 
 ## Validation Next Step
 
-Use `redactkit_development_docs/12_OUTREACH_TRACKER_TEMPLATE.md` to track recruiter outreach, prototype trials, repeat usage, and payment commitment signals.
+Use `trizla_development_docs/12_OUTREACH_TRACKER_TEMPLATE.md` to track recruiter outreach, prototype trials, repeat usage, and payment commitment signals.

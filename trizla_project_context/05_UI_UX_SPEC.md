@@ -1,4 +1,4 @@
-# UI/UX Spec — RedactKit MVP
+# UI/UX Spec — Trizla MVP
 
 ## Design goals
 
@@ -16,7 +16,7 @@
 
 Left:
 
-- RedactKit logo/text
+- Trizla logo/text
 
 Right:
 
@@ -131,7 +131,7 @@ Success message:
 
 Warning:
 
-> Review the sanitized text before using it. RedactKit can miss sensitive information.
+> Review the sanitized text before using it. Trizla can miss sensitive information.
 
 ## Screen 4 — Restore AI Response
 
@@ -158,7 +158,7 @@ Success message:
 
 Use:
 
-> RedactKit is a local redaction helper, not compliance software. It does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
+> Trizla is a local redaction helper, not compliance software. It does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
 
 ## Example demo text
 

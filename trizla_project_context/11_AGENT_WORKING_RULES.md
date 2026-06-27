@@ -2,7 +2,7 @@
 
 ## Mission
 
-Build RedactKit v0.1: a local-first web app for redacting sensitive text before users paste it into AI tools.
+Build Trizla v0.1: a local-first web app for redacting sensitive text before users paste it into AI tools.
 
 ## Read first
 
@@ -86,11 +86,11 @@ Do not over-engineer general person/company recognition in v0.1.
 
 Use:
 
-> Runs locally in your browser. Text is not uploaded by RedactKit.
+> Runs locally in your browser. Text is not uploaded by Trizla.
 
 Use disclaimer:
 
-> RedactKit is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
+> Trizla is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
 
 ## What to ask before changing scope
 
@@ -121,5 +121,5 @@ If tempted to add any of these, stop and ask:
 ## Suggested first prompt for coding agent
 
 ```text
-Read all markdown files in this folder. Then implement RedactKit v0.1 using React + TypeScript. Start with a static local-only app and the core redaction/restore flow. Keep redaction logic in pure functions and write tests for it. Do not add backend, auth, AI APIs, payments, extension, desktop app, or cloud storage.
+Read all markdown files in this folder. Then implement Trizla v0.1 using React + TypeScript. Start with a static local-only app and the core redaction/restore flow. Keep redaction logic in pure functions and write tests for it. Do not add backend, auth, AI APIs, payments, extension, desktop app, or cloud storage.
 ```
