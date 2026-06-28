@@ -24,6 +24,10 @@ Current implementation state:
 - Deployed the live MVP for validation.
 - QA passed for the live app, with manual full-flow QA confirmed by the user.
 - Created the first 15-person outreach sprint docs and tracker.
+- Shipped the cream/chartreuse visual redesign with in-memory theme toggle.
+- Removed external font loading and kept the privacy promise storage-free by default.
+- Added `/trizla-favicon.svg` to avoid stale favicon caches.
+- Synced documentation to the current pre-outreach launch state.
 
 ## Progress Template
 

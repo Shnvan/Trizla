@@ -6,6 +6,14 @@ Make redaction and restoration boringly reliable.
 
 The core QA priority is preserving user text structure while replacing and restoring sensitive values correctly.
 
+## Current QA State
+
+- Automated test suite passes with 58 tests.
+- Lint passes.
+- Production build passes.
+- Live manual QA passed before outreach.
+- Live URL: `https://trizla.ivanliao41.workers.dev/`
+
 ## Unit Test Areas
 
 - Email detection.
@@ -20,96 +28,50 @@ The core QA priority is preserving user text structure while replacing and resto
 - Restoration.
 - Unknown placeholder behavior.
 - Overlapping detections.
+- Case-insensitive custom-term restore casing.
 
-## Required Test Scenarios
+## Required Commands
 
-Email:
-
-```text
-Contact maria.santos@email.com and john@company.co.uk
+```powershell
+npm test
+npm run lint
+npm run build
 ```
 
-Phone:
+## Completed Manual QA Checklist
 
-```text
-Call +63 917 555 0192 or (555) 123-4567.
-```
+- [x] App loads.
+- [x] Sample text fills correctly.
+- [x] Detection finds expected items.
+- [x] User can uncheck an item.
+- [x] Unchecked item is not redacted.
+- [x] User can remove a detection.
+- [x] User can add a custom term.
+- [x] Custom term is redacted.
+- [x] Copy sanitized text works.
+- [x] Restore output works.
+- [x] Copy restored output works.
+- [x] Clear all works.
+- [x] FAQ opens and closes.
+- [x] Header How it works link scrolls correctly.
+- [x] Mobile layout is usable around 375px.
+- [x] App remains usable with a 20,000-character paste.
 
-URL:
+## Completed Privacy QA Checklist
 
-```text
-Visit https://example.com/path and www.company.com.
-```
-
-Money:
-
-```text
-Expected salary is PHP 85,000/month or $1,200.
-```
-
-Date:
-
-```text
-Interview date: June 27, 2026. Follow up on 2026-07-01.
-```
-
-ID:
-
-```text
-Ticket ID: ABC-123456. Order #ORD-998877.
-```
-
-Custom term:
-
-```text
-Candidate works at BrightPath BPO.
-```
-
-Restore:
-
-```text
-[PERSON_1] is a strong candidate. Contact [EMAIL_1].
-```
-
-Unknown placeholder:
-
-```text
-Contact [PERSON_99].
-```
-
-## Manual QA Checklist
-
-- [ ] App loads.
-- [ ] Sample text fills correctly.
-- [ ] Detection finds expected items.
-- [ ] User can uncheck an item.
-- [ ] Unchecked item is not redacted.
-- [ ] User can remove a detection.
-- [ ] User can add a custom term.
-- [ ] Custom term is redacted.
-- [ ] Copy sanitized text works.
-- [ ] Restore output works.
-- [ ] Copy restored output works.
-- [ ] Clear button works.
-- [ ] No console errors.
-- [ ] App remains usable with 20,000 characters.
-- [ ] Mobile layout is usable enough.
-
-## Privacy QA Checklist
-
-- [ ] No backend call for pasted text.
-- [ ] No AI API call.
-- [ ] No analytics event with pasted text.
-- [ ] No error reporting with pasted text.
-- [ ] No local storage unless explicit.
-- [ ] Delete local data button works if storage exists.
-- [ ] Privacy disclaimer is visible.
-- [ ] App works offline after page load.
-- [ ] No network requests happen during redaction.
+- [x] No backend call for pasted text.
+- [x] No AI API call.
+- [x] No analytics event with pasted text.
+- [x] No error reporting with pasted text.
+- [x] No persistent browser storage by default.
+- [x] Privacy disclaimer is visible.
+- [x] Trust badges are visible.
+- [x] Redaction still works after page load.
+- [x] No network requests happen during redaction actions.
 
 ## Browser Coverage
 
-Minimum:
+Minimum before major updates:
 
 - Chrome desktop.
 - Edge desktop.
@@ -121,16 +83,10 @@ Minimum:
 
 Use fake sample data only. Do not test with real medical, legal, financial, or highly sensitive data.
 
-## TODO
+## Outreach QA Rule
 
-- [ ] Add Vitest setup.
-- [ ] Add redaction engine unit tests.
-- [ ] Add restore tests.
-- [ ] Add overlap tests.
-- [ ] Add basic UI smoke tests if practical.
-- [ ] Run build before sharing with users.
-- [ ] Run manual QA checklist before outreach.
+During the first outreach sprint, reproduce every reported issue on the live URL before marking it as a real product bug. Do not build speculative fixes from one-off confusion unless the issue blocks the core workflow.
 
 ## Progress
 
-Status: Not started.
+Status: QA complete for first outreach. Continue QA only for reported issues and future changes.

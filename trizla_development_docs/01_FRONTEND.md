@@ -2,27 +2,31 @@
 
 ## Goal
 
-Build a simple, trustworthy React interface that lets users complete the full Trizla loop without instructions.
+Maintain a simple, trustworthy React interface that lets users complete the full Trizla loop without instructions.
 
 Success means a user can paste source text, review detections, copy sanitized text, paste an AI response, restore placeholders, and copy the restored output in under 2 minutes.
 
-## Stack
+## Current Stack
 
 - Vite
 - React
 - TypeScript
-- Tailwind CSS or simple CSS
-- Vitest and React Testing Library for UI-adjacent behavior
+- Simple CSS
+- Vitest for engine behavior
+- oxlint for linting
 
 Do not use server-side framework features for the MVP.
 
-## Required Screens
+## Current UI State
 
-- Landing or intro section.
-- Main app page.
-- Basic privacy/FAQ content.
-
-The first usable screen should be the app workflow, not a marketing-only page.
+- Implemented single-page app.
+- Implemented cream/chartreuse brutalist visual direction.
+- Implemented in-memory light/dark theme toggle.
+- Theme resets to light on refresh.
+- No external font loading.
+- Header includes Trizla brand, `Local only` badge, How it works link, FAQ link, theme toggle, and Clear all.
+- Hero, trust strip, four workflow panels, How it works, FAQ, validation CTA, and footer disclaimer are present.
+- Current favicon path is `/trizla-favicon.svg`.
 
 ## App Layout
 
@@ -31,7 +35,9 @@ Header:
 - Trizla name.
 - `Local only` badge.
 - `How it works` link.
-- `Clear data` action.
+- `FAQ` link.
+- In-memory theme toggle.
+- `Clear all` action.
 
 Main workflow:
 
@@ -54,19 +60,7 @@ Hero title:
 Sanitize sensitive text before pasting it into AI.
 ```
 
-Subtitle:
-
-```text
-Redact names, emails, phone numbers, company names, money amounts, IDs, and custom terms locally in your browser.
-```
-
-Trust line:
-
-```text
-No upload. No account. Review before copy.
-```
-
-Privacy copy:
+Trust copy:
 
 ```text
 Runs locally in your browser. Text is not uploaded by Trizla.
@@ -75,35 +69,27 @@ Runs locally in your browser. Text is not uploaded by Trizla.
 Disclaimer:
 
 ```text
-Trizla is not compliance software and does not guarantee complete anonymization. Always review before sharing sensitive text with third-party tools.
+Trizla is not legal, compliance, or security certification software. It does not guarantee complete anonymization. Always review redactions before using sensitive text with third-party tools.
 ```
 
-## Component Responsibilities
+## Completed
 
-- `Header`: product name, local badge, navigation/actions.
-- `PrivacyBanner`: local-only trust copy.
-- `OriginalTextPanel`: source textarea, sample text, clear action.
-- `DetectionToolbar`: detect action, select/deselect all, custom term entry trigger.
-- `ReviewPanel`: detection list with checkbox, type, value, placeholder, source/confidence, remove action.
-- `SanitizedOutputPanel`: sanitized textarea, copy action, review warning.
-- `RestorePanel`: AI response textarea, restore action, restored output, copy action.
-- `FooterDisclaimer`: non-compliance disclaimer.
-
-## TODO
-
-- [ ] Scaffold React + TypeScript app.
-- [ ] Add app shell and layout.
-- [ ] Add header with local-only badge.
-- [ ] Add original text textarea.
-- [ ] Add detection controls.
-- [ ] Add review panel with editable enabled state.
-- [ ] Add sanitized output textarea and copy button.
-- [ ] Add AI response textarea.
-- [ ] Add restored output textarea and copy button.
-- [ ] Add clear/reset action.
-- [ ] Add sample recruiter text.
-- [ ] Add basic privacy/FAQ content.
-- [ ] Ensure mobile layout is usable.
+- [x] Scaffold React + TypeScript app.
+- [x] Add app shell and layout.
+- [x] Add header with local-only badge.
+- [x] Add original text textarea.
+- [x] Add detection controls.
+- [x] Add review panel with editable enabled state.
+- [x] Add sanitized output textarea and copy button.
+- [x] Add AI response textarea.
+- [x] Add restored output textarea and copy button.
+- [x] Add clear/reset action.
+- [x] Add sample recruiter text.
+- [x] Add privacy/FAQ content.
+- [x] Add validation CTA.
+- [x] Ensure mobile layout is usable.
+- [x] Remove external font loading.
+- [x] Keep theme state in memory only.
 
 ## Acceptance Criteria
 
@@ -111,14 +97,18 @@ Trizla is not compliance software and does not guarantee complete anonymization.
 - Inputs are labeled and keyboard usable.
 - Copy buttons show confirmation.
 - False positives can be unchecked or removed.
-- Manual custom terms can be added once custom term support is implemented.
+- Manual custom terms can be added.
 - Privacy copy and disclaimer are visible.
 - No UI feature implies compliance certification or perfect anonymization.
 
 ## Progress
 
-Status: Not started.
+Status: Implemented, deployed, and QA-passed.
 
-Notes:
+Live app:
 
-- No frontend app exists yet.
+```text
+https://trizla.ivanliao41.workers.dev/
+```
+
+Next frontend work should come from repeated outreach feedback, not speculative polish.

@@ -4,7 +4,7 @@
 
 There is no database in Trizla v0.1.
 
-This file exists to document storage guardrails and future triggers. It is not an active implementation plan.
+This file documents storage guardrails and future triggers. It is not an active implementation plan.
 
 ## Prohibited in MVP
 
@@ -17,7 +17,7 @@ This file exists to document storage guardrails and future triggers. It is not a
 - Persisting pasted source text by default.
 - Persisting AI response text by default.
 
-## Default Data Model
+## Current Data Model
 
 Keep these values in memory only:
 
@@ -26,27 +26,30 @@ Keep these values in memory only:
 - AI response text.
 - Restored text.
 - Redaction map.
+- Custom terms.
+- Theme state.
 
-This data should disappear when the user clears it, reloads, closes the tab, or navigates away.
+This data disappears when the user clears it, reloads, closes the tab, or navigates away.
 
-## Optional Local Storage Later
+## Optional Persistence Later
 
 Only with explicit user action:
 
-- Custom terms.
+- Saved custom terms.
 - Local profiles.
 - Local-only preferences.
+- Current-tab recovery.
 
 Preferred storage order:
 
 1. In-memory state for MVP.
-2. `sessionStorage` if session recovery is needed.
-3. `localStorage` for saved terms only after explicit opt-in.
-4. IndexedDB only if local sessions become too large.
+2. Session-only recovery storage if users repeatedly ask for reload recovery.
+3. Explicit saved-term storage after opt-in.
+4. Larger browser database storage only if local sessions become too large for simpler storage.
 
 ## Delete Data Requirement
 
-If any browser storage is used, include:
+If any browser persistence is used, include:
 
 - Delete all local data button.
 - Confirmation message.
@@ -62,17 +65,22 @@ Consider a database only after validation proves:
 - Team workflows become necessary.
 - Cloud sync is worth the privacy tradeoff.
 
-## TODO
+## Completed
 
-- [ ] Do not add database dependencies during MVP.
-- [ ] Keep redaction session data in memory by default.
+- [x] Do not add database dependencies during MVP.
+- [x] Keep redaction session data in memory by default.
+- [x] Keep custom terms in memory by default.
+- [x] Keep theme state in memory only.
+
+## Still Required
+
 - [ ] Ask before adding any persistent storage.
 - [ ] Add delete-local-data UX if persistence is introduced.
 
 ## Progress
 
-Status: Deferred.
+Status: Deferred by design.
 
 Notes:
 
-- No database exists and none should be created for MVP.
+- No database exists and none should be created before validation proves a need.

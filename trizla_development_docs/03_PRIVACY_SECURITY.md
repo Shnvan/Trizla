@@ -2,7 +2,7 @@
 
 ## Goal
 
-Make Trizla trustworthy by keeping the MVP local-first, transparent, and conservative in its claims.
+Keep Trizla trustworthy by preserving the MVP's local-first model, transparent copy, and conservative claims.
 
 The product reduces accidental exposure before users paste text into third-party AI tools. It is not compliance software.
 
@@ -30,14 +30,14 @@ Runs locally in your browser. Text is not uploaded by Trizla.
 - `Perfect anonymization`
 - `Enterprise-grade security`
 
-## Data Handling Rules
+## Current Data Handling
 
-- Process pasted text locally.
-- Store nothing by default.
-- Keep original text, sanitized text, AI response text, restored text, and redaction map in memory by default.
-- Never send pasted text to logs, analytics, error reporting, or external APIs.
-- Avoid third-party scripts inside the app page.
-- Make every saved item explicit if persistence is ever added.
+- Pasted text is processed locally in the browser.
+- Redaction actions do not send pasted text to a backend, AI API, analytics tool, or logging service.
+- Original text, sanitized text, AI response text, restored text, redaction map, custom terms, and theme state are in memory only.
+- Theme toggle works while the tab is open and resets to light on refresh.
+- No external font loading is used.
+- The deployed app uses self-only security headers from `public/_headers`.
 
 ## Storage Rules
 
@@ -47,10 +47,10 @@ Default:
 
 Allowed later only with explicit user action:
 
-- `sessionStorage` for current-session recovery.
-- `localStorage` for saved custom terms.
+- Session recovery storage for current-tab recovery.
+- Saved-term storage for user-approved reusable custom terms.
 
-If persistence exists, include:
+If persistence exists later, include:
 
 - `Delete all local data` button.
 - Confirmation copy:
@@ -94,17 +94,17 @@ Out of scope:
 - Regulated medical, legal, financial, or government workflows.
 - Enterprise audit, admin, or certification requirements.
 
-## TODO
+## Completed
 
-- [ ] Add visible local-only badge.
-- [ ] Add no-upload statement.
-- [ ] Add no-account statement.
-- [ ] Add review-before-copy warning.
-- [ ] Add compliance disclaimer.
-- [ ] Add clear/reset action.
-- [ ] Add delete-local-data action if persistence is added.
-- [ ] Confirm redaction flow has no network calls.
-- [ ] Confirm no analytics event contains user text.
+- [x] Add visible local-only badge.
+- [x] Add no-upload statement.
+- [x] Add no-account statement.
+- [x] Add review-before-copy warning.
+- [x] Add compliance disclaimer.
+- [x] Add clear/reset action.
+- [x] Confirm redaction flow has no backend, AI API, or analytics call.
+- [x] Remove external font loading.
+- [x] Keep theme state in memory only.
 
 ## Acceptance Criteria
 
@@ -117,4 +117,4 @@ Out of scope:
 
 ## Progress
 
-Status: Not started.
+Status: Implemented and QA-passed before outreach.

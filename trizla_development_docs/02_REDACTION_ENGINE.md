@@ -2,7 +2,7 @@
 
 ## Goal
 
-Implement local, pure TypeScript logic for detecting sensitive values, creating stable placeholders, generating sanitized text, and restoring placeholders after an AI response.
+Maintain local, pure TypeScript logic for detecting sensitive values, creating stable placeholders, generating sanitized text, and restoring placeholders after an AI response.
 
 The biggest engineering risk is corrupting user text or failing to restore placeholders, so correctness matters more than clever detection.
 
@@ -39,6 +39,23 @@ type Detection = {
 }
 ```
 
+## Implemented Behavior
+
+- Email detection.
+- URL detection.
+- Phone detection.
+- Money detection.
+- Date detection.
+- Long ID, order ID, and ticket ID detection.
+- Custom term detection with escaped regex handling.
+- Case-sensitive and case-insensitive custom terms.
+- Actual matched text is preserved for custom-term restore casing.
+- Overlapping detections are resolved before placeholder mapping.
+- Date-like ranges win over phone-like overlaps when priority and confidence require it.
+- Stable placeholder map generation.
+- Sanitization for enabled detections only.
+- Restore that leaves unknown placeholders unchanged.
+
 ## Placeholder Rules
 
 - Format is `[TYPE_N]`.
@@ -56,27 +73,12 @@ maria@email.com -> [EMAIL_1]
 BrightPath BPO -> [COMPANY_1]
 ```
 
-## Detection Priority
-
-Implement in this order:
-
-1. Email.
-2. Phone.
-3. URL.
-4. Money.
-5. Date.
-6. Long ID, order ID, or ticket ID.
-7. Custom terms.
-8. Simple label-based person/company heuristics.
-
-Do not attempt general named-entity recognition in v0.1.
-
 ## Sanitization Rules
 
 - Replace only enabled detections.
 - Preserve punctuation, spacing, and line breaks.
 - Sort replacement ranges from end to start to avoid index shifting.
-- Merge or resolve overlapping detections before replacement.
+- Resolve overlapping detections before replacement.
 - Prefer higher-confidence, more complete matches when detections overlap.
 
 ## Restore Rules
@@ -86,17 +88,17 @@ Do not attempt general named-entity recognition in v0.1.
 - Missing placeholders are ignored.
 - Unknown placeholders remain unchanged.
 
-## TODO
+## Completed
 
-- [ ] Create pure detection functions for email, phone, URL, money, date, and ID.
-- [ ] Create custom term detector with escaped regex handling.
-- [ ] Add case-sensitive and case-insensitive custom term behavior.
-- [ ] Add simple label-based person/company heuristics if feasible.
-- [ ] Create overlapping detection merge logic.
-- [ ] Create stable placeholder map logic.
-- [ ] Create sanitizer.
-- [ ] Create restore function.
-- [ ] Keep all logic testable without React.
+- [x] Create pure detection functions for email, phone, URL, money, date, and ID.
+- [x] Create custom term detector with escaped regex handling.
+- [x] Add case-sensitive and case-insensitive custom term behavior.
+- [x] Add label-based person/company heuristics.
+- [x] Create overlapping detection resolution logic.
+- [x] Create stable placeholder map logic.
+- [x] Create sanitizer.
+- [x] Create restore function.
+- [x] Keep all logic testable without React.
 
 ## Acceptance Criteria
 
@@ -110,8 +112,12 @@ Do not attempt general named-entity recognition in v0.1.
 
 ## Progress
 
-Status: Not started.
+Status: Implemented and covered by automated tests.
 
-Notes:
+Current verification:
 
-- Redaction logic has not been implemented yet.
+```powershell
+npm test
+```
+
+Latest QA state: 58 tests passing.

@@ -1,10 +1,10 @@
-# System Architecture — Trizla MVP
+# System Architecture - Trizla MVP
 
-## Architecture principle
+## Architecture Principle
 
 Local-first. No backend. No external processing.
 
-## MVP architecture
+## Current MVP Architecture
 
 ```text
 Browser
@@ -13,7 +13,13 @@ Browser
   |-- Redaction Engine
   |-- Placeholder Mapper
   |-- Restore Engine
-  |-- Optional Local Storage
+  |-- In-memory state
+```
+
+Live app:
+
+```text
+https://trizla.ivanliao41.workers.dev/
 ```
 
 ## Components
@@ -22,27 +28,20 @@ Browser
 
 Responsible for:
 
-- Text input
-- Review panel
-- Copy buttons
-- Status messages
-- Privacy notices
-- Manual term entry
-- Restore flow
+- Text input.
+- Review panel.
+- Copy buttons.
+- Status messages.
+- Privacy notices.
+- Manual term entry.
+- Restore flow.
+- In-memory theme toggle.
 
-Suggested components:
+Current UI:
 
-```text
-App
-  Header
-  PrivacyBanner
-  OriginalTextPanel
-  DetectionToolbar
-  ReviewPanel
-  SanitizedOutputPanel
-  RestorePanel
-  FooterDisclaimer
-```
+- Single-page Vite React app.
+- Cream/chartreuse brutalist visual direction.
+- Header, hero, trust strip, workflow panels, How it works, FAQ, validation CTA, and footer disclaimer.
 
 ### 2. Redaction Engine
 
@@ -105,11 +104,11 @@ Maria Santos again -> [PERSON_1]
 
 Responsible for replacing approved detections in original text.
 
-Important implementation rule:
+Implementation rule:
 
 Replace by sorted ranges from end to start to avoid index shifting.
 
-For custom terms or regex matches, merge overlapping detections before replacing.
+For custom terms or regex matches, resolve overlapping detections before replacing.
 
 ### 5. Restore Engine
 
@@ -136,54 +135,41 @@ Rules:
 - Unknown placeholders remain unchanged.
 - Multiple instances restore correctly.
 
-### 6. Storage
+### 6. State
 
-Default: no persistence.
+Default: in memory only.
 
-Optional:
+Current in-memory values:
 
-- sessionStorage for current session only.
-- localStorage for custom terms only if user explicitly saves them.
-- IndexedDB only if sessions become large later.
+- Original text.
+- Sanitized text.
+- AI response text.
+- Restored text.
+- Redaction map.
+- Custom terms.
+- Theme state.
 
-## File structure suggestion
+The theme toggle works while the tab is open and resets to light on refresh.
+
+## Current File Structure
 
 ```text
 src/
-  app/
-    App.tsx
-  components/
-    Header.tsx
-    PrivacyBanner.tsx
-    OriginalTextPanel.tsx
-    DetectionToolbar.tsx
-    ReviewPanel.tsx
-    SanitizedOutputPanel.tsx
-    RestorePanel.tsx
-    FooterDisclaimer.tsx
+  App.tsx
+  App.css
+  index.css
+  main.tsx
   lib/
-    detection/
-      detectSensitiveInfo.ts
-      regexDetectors.ts
-      customTermDetector.ts
-      heuristicDetectors.ts
     redaction/
-      createPlaceholderMap.ts
-      sanitizeText.ts
-      restoreText.ts
-      mergeDetections.ts
-    storage/
-      localSettings.ts
-    clipboard/
-      copyToClipboard.ts
-  types/
-    redaction.ts
-  tests/
-    redaction.test.ts
-    restore.test.ts
+    sampleText.ts
+  test/
+public/
+  _headers
+  favicon.svg
+  trizla-favicon.svg
 ```
 
-## Entity types
+## Entity Types
 
 ```ts
 type EntityType =
@@ -198,61 +184,41 @@ type EntityType =
   | "CUSTOM"
 ```
 
-## Detection strategy v0.1
+## Detection Strategy v0.1
 
-### High-confidence regex detectors
+Implemented:
 
-Implement first:
-
-- Email
-- URL
-- Phone
-- Money
-- Dates
-- Long IDs
-
-### Custom terms
-
-Implement second:
-
-- Exact phrase detection.
-- Case-insensitive by default.
-- Escape regex characters.
-- Word boundary matching where appropriate.
-
-### Heuristic names/companies
-
-Implement carefully and mark low confidence.
-
-Possible initial heuristic:
-
-- Consecutive capitalized words near labels:
-  - `Name: Maria Santos`
-  - `Candidate: Maria Santos`
-  - `Client: Maria Santos`
-  - `Company: BrightPath BPO`
-  - `Employer: Acme Dental`
+- Email.
+- URL.
+- Phone.
+- Money.
+- Dates.
+- Long IDs.
+- Custom terms.
+- Simple label-based names and companies.
+- Overlap resolution before placeholder mapping.
 
 Do not try to solve general NER perfectly in v0.1.
 
-## Privacy architecture requirements
+## Privacy Architecture Requirements
 
 - No backend.
 - No fetch calls in redaction flow.
-- No third-party script on app page if possible.
+- No third-party scripts on app page.
 - No logging pasted text.
 - No error reporting that captures user input.
 - No analytics event containing text.
+- No external font loading.
 
-## Security notes
+## Security Notes
 
 Even local browser apps can expose text through:
 
-- Browser extensions
-- Clipboard history
-- Screen recordings
-- User-installed malware
-- Shared computers
+- Browser extensions.
+- Clipboard history.
+- Screen recordings.
+- User-installed malware.
+- Shared computers.
 
 Do not overpromise security. Use language like:
 

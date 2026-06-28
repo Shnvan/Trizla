@@ -2,20 +2,40 @@
 
 ## Mission
 
-Build Trizla v0.1: a local-first web app that redacts sensitive text before users paste it into AI tools, then restores placeholders after the AI response.
+Maintain Trizla v0.1: a local-first web app that redacts sensitive text before users paste it into AI tools, then restores placeholders after the AI response.
+
+The app is already implemented, renamed, visually redesigned, QA-passed, deployed, and ready for first outreach.
+
+Live app:
+
+```text
+https://trizla.ivanliao41.workers.dev/
+```
 
 ## Read First
 
 Before coding, read:
 
 1. `trizla_development_docs/00_INDEX.md`
-2. `trizla_development_docs/01_FRONTEND.md`
-3. `trizla_development_docs/02_REDACTION_ENGINE.md`
-4. `trizla_development_docs/03_PRIVACY_SECURITY.md`
-5. `trizla_development_docs/06_QA_TESTING.md`
-6. `trizla_development_docs/08_MASTER_TODO.md`
+2. `trizla_development_docs/08_MASTER_TODO.md`
+3. `trizla_development_docs/13_FIRST_OUTREACH_SPRINT.md`
+4. `trizla_development_docs/14_FIRST_OUTREACH_TRACKER.md`
+5. `trizla_development_docs/03_PRIVACY_SECURITY.md`
+6. `trizla_development_docs/06_QA_TESTING.md`
 
-Use `trizla_project_context/` as the original source archive if more context is needed.
+Use `trizla_project_context/` as the source archive if more context is needed.
+
+## Current Commands
+
+```powershell
+npm run dev
+npm test
+npm run lint
+npm run build
+npm run preview
+```
+
+Do not open `index.html` directly. Use Vite dev or preview locally.
 
 ## Hard Rules
 
@@ -31,38 +51,30 @@ Use `trizla_project_context/` as the original source archive if more context is 
 - Do not add payments yet.
 - Keep detection local and reviewable.
 - Keep redaction logic in pure functions.
+- Keep default state in memory only.
+- Do not add external font loading.
 
-## First Build Target
+## Current Product Surface
 
-Implement this first:
+- Vite React + TypeScript single-page app.
+- Cream/chartreuse brutalist UI.
+- In-memory theme toggle that resets to light on refresh.
+- Local detection, review, sanitize, copy, restore, and clear flow.
+- Custom terms with case-sensitive option.
+- How it works, FAQ, validation CTA, and disclaimer.
+- Current favicon path: `/trizla-favicon.svg`.
+- Deployment: Cloudflare Workers static assets.
 
-```text
-Paste text
--> Detect emails/phones/URLs/money/dates/IDs
--> Show review list with checkboxes
--> Generate sanitized text
--> Copy sanitized text
--> Paste AI response
--> Restore placeholders
--> Copy restored output
-```
+## Current Priority
 
-Then add custom terms.
+Run the first outreach validation sprint. Track contacts, replies, trials, exact quotes, pain level, confusing parts, and willingness-to-pay signals in `14_FIRST_OUTREACH_TRACKER.md`.
 
-## Suggested Prompt for Future Coding Agent
+Do not build new features until repeated tester evidence justifies them.
 
-```text
-Read trizla_development_docs first, then implement Trizla v0.1 using React + TypeScript. Build a static local-only app and start with the core redaction/restore flow. Keep detection, sanitization, placeholder mapping, and restore logic in pure functions. Write tests for the core engine. Do not add backend, auth, AI APIs, payments, browser extension, desktop app, database, or cloud storage.
-```
+## Completion Criteria for This Phase
 
-## Completion Criteria for v0.1
-
-- App runs locally.
-- No backend exists.
-- User can complete the core flow.
-- User can manually add custom sensitive terms.
-- User can uncheck false positives.
-- Restore works.
-- Tests pass.
-- Privacy messaging is visible.
-- No network calls are needed for redaction.
+- 15 targeted contacts sent.
+- 5 replies received.
+- 3 people try the live app.
+- 2 people say they manually clean sensitive text or avoid AI because of sensitive text.
+- At least 3 exact quotes captured.

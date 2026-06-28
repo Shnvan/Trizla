@@ -1,116 +1,104 @@
 # Tech Stack and Setup
 
-## Recommended stack
-
-Use this unless there is a strong reason not to:
+## Current Stack
 
 - Vite
 - React
 - TypeScript
-- Tailwind CSS
+- Simple CSS
 - Vitest
-- React Testing Library
-- ESLint
-- Prettier
+- oxlint
+- Cloudflare Workers static assets
 
-## Why this stack
+## Why This Stack
 
-- Fast to scaffold.
-- Easy for Codex/Claude Code to modify.
+- Fast local development.
 - Works as a static app.
-- Can deploy for free.
 - No backend required.
-- Good for a local-first privacy utility.
+- Easy to deploy from `main`.
+- Good fit for a local-first privacy utility.
+- Keeps runtime dependencies small.
 
-## Alternative stack
+## Do Not Use in MVP
 
-Next.js is okay, but avoid server features for MVP.
+- Backend database.
+- Supabase.
+- Firebase.
+- Auth provider.
+- OpenAI API.
+- Claude API.
+- Serverless functions.
+- Browser extension framework.
+- Electron.
+- Tauri.
+- Analytics SDK.
+- External font provider.
 
-If using Next.js:
+Tauri or another offline wrapper can come later only after validation shows users refuse a web version but accept an offline build.
 
-- Use static export if possible.
-- Do not create API routes.
-- Do not send pasted text to server actions.
-- Keep all redaction code client-side.
+## Local Commands
 
-## Do not use in MVP
+Install:
 
-- Backend database
-- Supabase
-- Firebase
-- Auth.js
-- OpenAI API
-- Claude API
-- Serverless functions
-- Browser extension framework
-- Electron
-- Tauri
-
-Tauri can come later after validation.
-
-## Suggested setup commands
-
-For Vite:
-
-```bash
-npm create vite@latest trizla -- --template react-ts
-cd trizla
+```powershell
 npm install
-npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
-npm install tailwindcss @tailwindcss/vite
 ```
 
-Adjust commands based on package versions and project setup.
+Run locally:
 
-## Project scripts
+```powershell
+npm run dev
+```
 
-Expected scripts:
+Open the Vite URL printed in the terminal. Do not open `index.html` directly.
+
+Verify:
+
+```powershell
+npm test
+npm run lint
+npm run build
+```
+
+Preview production build:
+
+```powershell
+npm run preview
+```
+
+## Project Scripts
+
+Current scripts:
 
 ```json
 {
   "dev": "vite",
   "build": "tsc -b && vite build",
+  "lint": "oxlint .",
   "preview": "vite preview",
-  "test": "vitest",
-  "lint": "eslint ."
+  "test": "vitest run"
 }
 ```
 
-## Package choices
-
-Keep dependencies minimal.
-
-Allowed useful packages:
-
-- `nanoid` for IDs, optional
-- `clsx` for class names, optional
-- `lucide-react` for icons, optional
-
-Avoid heavy NER libraries in v0.1 unless necessary.
-
 ## Deployment
 
-Recommended:
+Current deployment:
 
-- Vercel free
-- Netlify free
-- Cloudflare Pages free
+- Host: Cloudflare Workers static assets
+- Live URL: `https://trizla.ivanliao41.workers.dev/`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Root directory: project root
+- Production branch: `main`
+- Environment variables: none
 
-Important:
+Current production asset notes:
 
-- The app can be deployed statically.
-- No environment variables should be required.
-- It should still work if downloaded as static files.
+- Favicon URL: `/trizla-favicon.svg`
+- Security headers: `public/_headers`
+- External fonts: none
 
-## Offline version
-
-After v0.1 works:
-
-- Provide a downloadable `.html` or zipped static build.
-- Explain that users can open it locally.
-- This increases trust for privacy-sensitive testers.
-
-## Code quality rules
+## Code Quality Rules
 
 - Put detection logic in pure functions.
 - Write tests for redaction and restoration.
@@ -118,21 +106,16 @@ After v0.1 works:
 - No hidden network calls.
 - No tracking pasted text.
 - Clear naming.
-- Small components.
+- Keep components and helpers small.
 
-## Build priority
+## Current Build Priority
 
-Build in this order:
+The MVP build is complete. The next priority is outreach validation, not new product features.
 
-1. UI shell
-2. Text input
-3. Regex detectors
-4. Review panel
-5. Placeholder map
-6. Sanitized output
-7. Copy button
-8. Restore flow
-9. Custom terms
-10. Tests
-11. Privacy/FAQ page
-12. Landing page polish
+Use:
+
+```text
+trizla_development_docs/14_FIRST_OUTREACH_TRACKER.md
+```
+
+Only build new features after repeated tester evidence.

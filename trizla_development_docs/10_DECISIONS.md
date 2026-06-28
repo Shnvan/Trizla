@@ -20,9 +20,13 @@ Recruiters and talent sourcers.
 
 - Use a static React + TypeScript app.
 - Prefer Vite.
+- Deploy through Cloudflare Workers static assets from `main`.
 - Keep all redaction logic client-side.
 - Use pure TypeScript functions for detection, sanitization, placeholder mapping, and restoration.
 - Store nothing by default.
+- Keep theme state in memory only; refresh resets to light.
+- Use local/system fonts only.
+- Use `/trizla-favicon.svg` as the current favicon path.
 - Do not create backend code in MVP.
 - Do not create database or cloud storage in MVP.
 - Do not call OpenAI, Claude, Gemini, or other AI APIs in MVP.
@@ -35,6 +39,8 @@ Recruiters and talent sourcers.
 - Simple label-based person/company detection is optional for v0.1.
 - General NER is out of scope for v0.1.
 - Pricing hypothesis is `$29 one-time` for first 50 early users.
+- Current validation URL is `https://trizla.ivanliao41.workers.dev/`.
+- First outreach tracking lives in `14_FIRST_OUTREACH_TRACKER.md`.
 
 ## Privacy Decisions
 

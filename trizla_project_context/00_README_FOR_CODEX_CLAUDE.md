@@ -2,11 +2,19 @@
 
 ## What this is
 
-This folder contains the full project context for building **Trizla**, a local-first redaction tool for people who want to use ChatGPT/Claude/Gemini with sensitive work text without manually removing names, emails, phone numbers, client names, company names, IDs, and other private terms.
+This folder contains the product context for **Trizla**, a local-first redaction tool for people who want to use ChatGPT, Claude, Gemini, or other AI tools with sensitive work text without manually removing names, emails, phone numbers, client names, company names, IDs, and other private terms.
+
+Trizla is now implemented, deployed, QA-passed, and ready for first outreach validation.
+
+Live app:
+
+```text
+https://trizla.ivanliao41.workers.dev/
+```
 
 ## How the coding agent should use these files
 
-Read these files before coding:
+Read these files before major product changes:
 
 1. `00_README_FOR_CODEX_CLAUDE.md`
 2. `01_PRODUCT_BRIEF.md`
@@ -22,11 +30,13 @@ Read these files before coding:
 12. `11_AGENT_WORKING_RULES.md`
 13. `12_DECISION_LOG_AND_KILL_METRICS.md`
 
+Use `trizla_development_docs/` for the active launch-state docs and outreach tracker.
+
 ## Product in one sentence
 
 **Trizla sanitizes sensitive text locally before users paste it into AI tools, then restores placeholders after the AI response.**
 
-## Non-negotiables
+## Non-Negotiables
 
 - No backend in MVP.
 - No login in MVP.
@@ -37,20 +47,33 @@ Read these files before coding:
 - Store nothing by default.
 - Do not claim legal compliance, HIPAA compliance, GDPR compliance, or perfect anonymization.
 - Keep manual review central.
-- Build the smallest useful version first.
+- Build only from validated user evidence during outreach.
 
-## MVP core loop
+## Current MVP Core Loop
 
 1. User pastes sensitive text.
 2. App detects sensitive items locally.
 3. User reviews detected items.
 4. App replaces approved items with stable placeholders.
-5. User copies sanitized text into ChatGPT/Claude/Gemini.
+5. User copies sanitized text into ChatGPT, Claude, Gemini, or another AI tool.
 6. User pastes AI response back into Trizla.
 7. App restores placeholders locally.
 8. User copies final restored output.
 
-## Target MVP buyer
+## Current Implementation
+
+- Vite React + TypeScript app.
+- Local redaction engine implemented in pure TypeScript functions.
+- Custom terms implemented.
+- Restore flow implemented.
+- Cream/chartreuse brutalist UI implemented.
+- Theme toggle is in memory only and resets to light on refresh.
+- No external font loading.
+- Current favicon path is `/trizla-favicon.svg`.
+- Cloudflare Workers static deployment is live.
+- QA passed with 58 automated tests.
+
+## Target MVP Buyer
 
 Start with **recruiters**, then test agency owners, virtual assistants, consultants, and freelancers.
 
@@ -58,31 +81,18 @@ Primary first-use example:
 
 > A recruiter wants to summarize a candidate profile with ChatGPT but needs to remove the candidate name, email, phone number, current employer, expected salary, and private interview notes first.
 
-## Success definition for v0.1
+## Current Success Definition
 
 A user can complete this flow without instructions:
 
-**Paste sensitive text → review detections → copy sanitized text → paste AI response → restore placeholders.**
+```text
+Paste sensitive text -> review detections -> copy sanitized text -> paste AI response -> restore placeholders.
+```
 
-## Recommended first build
+## Current Priority
 
-Build a static React + TypeScript app with Vite or Next.js. No backend.
-
-Use simple local detection first:
-
-- Emails
-- Phone numbers
-- URLs
-- Money amounts
-- Dates
-- Long IDs / order IDs
-- Custom user terms
-- Optional simple name/company heuristics
-
-Do not build authentication, payment, browser extension, desktop app, or cloud sync yet.
-
-## Suggested first command for the coding agent
+Run the first 15-person outreach sprint and track results in:
 
 ```text
-Read all markdown files in this folder. Then build Trizla v0.1 as a local-only TypeScript React app. Start with the core flow only. Do not add backend, auth, payments, external APIs, browser extension, or desktop app.
+trizla_development_docs/14_FIRST_OUTREACH_TRACKER.md
 ```

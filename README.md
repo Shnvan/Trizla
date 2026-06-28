@@ -2,6 +2,12 @@
 
 Trizla is a local-first web app for sanitizing sensitive text before pasting it into AI tools, then restoring placeholders after the AI response.
 
+Live app:
+
+```text
+https://trizla.ivanliao41.workers.dev/
+```
+
 The MVP flow is:
 
 1. Paste source text.
@@ -11,15 +17,25 @@ The MVP flow is:
 5. Paste an AI response containing placeholders.
 6. Restore placeholders locally.
 
+## Current State
+
+- Implemented Vite + React + TypeScript app.
+- Implemented local detection, placeholder mapping, sanitization, custom terms, and restore flow.
+- Implemented cream/chartreuse brutalist UI with an in-memory theme toggle.
+- Deployed on Cloudflare Workers static assets.
+- QA passed before outreach with 58 automated tests passing.
+- First outreach sprint is ready in `trizla_development_docs/13_FIRST_OUTREACH_SPRINT.md`.
+
 ## MVP Constraints
 
 - No backend.
 - No authentication.
 - No database.
 - No AI API.
-- No storage by default.
+- No analytics.
+- No persistent browser storage by default.
 - No uploaded pasted text.
-- No analytics or telemetry for pasted text.
+- No external font loading.
 - No compliance or perfect-anonymization claims.
 
 ## Local Setup
@@ -35,9 +51,11 @@ Open the local URL printed by Vite, usually:
 http://127.0.0.1:5173/
 ```
 
+Do not open `index.html` directly. The app is built for Vite dev, preview, or static hosting.
+
 ## Verification
 
-Run these before sharing the app:
+Run these before sharing or deploying changes:
 
 ```powershell
 npm test
@@ -54,16 +72,22 @@ npm run build
 npm run preview
 ```
 
-Vite will serve the built app from `dist` and print a local preview URL.
+Vite serves the built app from `dist` and prints a local preview URL.
 
-## Static Deployment
+## Deployment
 
-Trizla deploys as a static Vite app.
+Current host:
+
+- Cloudflare Workers static assets
+
+Deployment settings:
 
 - Build command: `npm run build`
 - Output directory: `dist`
+- Root directory: project root
+- Production branch: `main`
 - Environment variables: none
-- Suitable hosts: Vercel, Netlify, Cloudflare Pages
+- Current favicon path: `/trizla-favicon.svg`
 
 Do not add deployment SDKs, serverless functions, API routes, auth, database, analytics, payments, or AI APIs for the MVP.
 
@@ -83,4 +107,4 @@ Do not add deployment SDKs, serverless functions, API routes, auth, database, an
 
 ## Validation Next Step
 
-Use `trizla_development_docs/12_OUTREACH_TRACKER_TEMPLATE.md` to track recruiter outreach, prototype trials, repeat usage, and payment commitment signals.
+Use `trizla_development_docs/14_FIRST_OUTREACH_TRACKER.md` for the first 15-person validation sprint. The reusable template is `trizla_development_docs/12_OUTREACH_TRACKER_TEMPLATE.md`.
