@@ -618,6 +618,13 @@
   white-space: nowrap;
 }
 
+[data-theme='light'] .review-placeholder {
+  color: var(--color-text-primary);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  padding: 2px 6px;
+}
+
 .review-meta {
   font-family: var(--font-mono);
   font-size: 0.62rem;
