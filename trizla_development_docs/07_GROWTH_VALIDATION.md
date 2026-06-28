@@ -108,13 +108,24 @@ Continue if:
 
 ## TODO
 
-- [ ] Add shareable landing/demo page.
-- [ ] Include local-first privacy copy.
-- [ ] Include recruiter-oriented example.
-- [ ] Add waitlist or early-access placeholder only after MVP loop works.
+- [x] Add shareable landing/demo page.
+- [x] Include local-first privacy copy.
+- [x] Include recruiter-oriented example.
+- [x] Add waitlist or early-access placeholder only after MVP loop works.
 - [ ] Track outreach in a spreadsheet.
 - [ ] Record pain level, trial, repeat use, and payment commitment.
 
 ## Progress
 
-Status: Not started.
+Status: First 15-person outreach sprint ready.
+
+Active sprint docs:
+
+- `13_FIRST_OUTREACH_SPRINT.md`
+- `14_FIRST_OUTREACH_TRACKER.md`
+
+Live demo:
+
+```text
+https://trizla.ivanliao41.workers.dev/
+```

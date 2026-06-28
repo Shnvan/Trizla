@@ -49,6 +49,8 @@ Core loop:
 - `09_PROGRESS_LOG.md`: ongoing dated progress log.
 - `10_DECISIONS.md`: decision log.
 - `11_AGENT_HANDOFF.md`: rules for future coding agents.
+- `13_FIRST_OUTREACH_SPRINT.md`: first 15-person validation sprint workflow and message copy.
+- `14_FIRST_OUTREACH_TRACKER.md`: active tracker for the first outreach batch.
 
 ## Current State
 

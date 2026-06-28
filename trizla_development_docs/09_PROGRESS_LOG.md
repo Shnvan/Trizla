@@ -2,14 +2,14 @@
 
 ## Current Overall Status
 
-Status: Planning docs created.
+Status: Live MVP deployed and first outreach sprint ready.
 
 Current implementation state:
 
-- No app scaffold.
-- No frontend implementation.
-- No redaction engine.
-- No tests.
+- Vite React app implemented.
+- Redaction, sanitization, custom terms, and restore flow implemented.
+- Automated redaction-engine tests pass.
+- Live deployment available at `https://trizla.ivanliao41.workers.dev/`.
 - No backend.
 - No database.
 
@@ -20,6 +20,10 @@ Current implementation state:
 - Created developer documentation folder.
 - Split project context into frontend, redaction engine, privacy/security, deferred backend, deferred database, QA/testing, growth/validation, TODO, decisions, and agent handoff docs.
 - Preserved MVP constraints from source context.
+- Renamed the product to Trizla.
+- Deployed the live MVP for validation.
+- QA passed for the live app, with manual full-flow QA confirmed by the user.
+- Created the first 15-person outreach sprint docs and tracker.
 
 ## Progress Template
 
