@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import './App.css'
 import { detectSensitiveInfo } from './lib/redaction/detectSensitiveInfo'
@@ -26,7 +26,42 @@ const CUSTOM_TERM_TYPES: EntityType[] = [
   'DATE',
 ]
 
+type Theme = 'light' | 'dark'
+
 function App() {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof document !== 'undefined') {
+      const current = document.documentElement.dataset.theme
+      if (current === 'dark' || current === 'light') return current
+    }
+    return 'light'
+  })
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
+
+  const toggleTheme = () =>
+    setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal')
+    if (elements.length === 0) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+    elements.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
   const [originalText, setOriginalText] = useState('')
   const [detections, setDetections] = useState<Detection[]>([])
   const [hasDetected, setHasDetected] = useState(false)
@@ -154,6 +189,14 @@ function App() {
             </a>
             <button
               type="button"
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'dark' ? 'Dark' : 'Light'}
+            </button>
+            <button
+              type="button"
               className="secondary-button"
               onClick={handleClearAll}
             >
@@ -184,7 +227,7 @@ function App() {
           </ul>
         </section>
 
-        <section className="panel" aria-labelledby="original-heading" id="demo">
+        <section className="panel reveal" aria-labelledby="original-heading" id="demo">
           <h2 id="original-heading" className="panel-heading">
             <span className="step-chip" aria-hidden="true">1</span>
             <span>Original text</span>
@@ -216,7 +259,7 @@ function App() {
           </div>
         </section>
 
-        <section className="panel" aria-labelledby="review-heading">
+        <section className="panel reveal" aria-labelledby="review-heading">
           <h2 id="review-heading" className="panel-heading">
             <span className="step-chip" aria-hidden="true">2</span>
             <span>Review detections</span>
@@ -247,7 +290,7 @@ function App() {
           />
         </section>
 
-        <section className="panel" aria-labelledby="sanitized-heading">
+        <section className="panel reveal" aria-labelledby="sanitized-heading">
           <h2 id="sanitized-heading" className="panel-heading">
             <span className="step-chip" aria-hidden="true">3</span>
             <span>Sanitized output</span>
@@ -271,7 +314,7 @@ function App() {
             </span>
             <button
               type="button"
-              className="primary-button"
+              className={`primary-button${copied ? ' is-stamped' : ''}`}
               onClick={handleCopy}
               disabled={!hasSanitizedOutput}
             >
@@ -280,7 +323,7 @@ function App() {
           </div>
         </section>
 
-        <section className="panel" aria-labelledby="restore-heading">
+        <section className="panel reveal" aria-labelledby="restore-heading">
           <h2 id="restore-heading" className="panel-heading">
             <span className="step-chip" aria-hidden="true">4</span>
             <span>Restore AI response</span>
@@ -317,7 +360,7 @@ function App() {
           <div className="panel-actions">
             <button
               type="button"
-              className="primary-button"
+              className={`primary-button${restoredCopied ? ' is-stamped' : ''}`}
               onClick={handleCopyRestored}
               disabled={!hasRestoredOutput}
             >
@@ -519,7 +562,7 @@ const HOW_IT_WORKS_STEPS = [
 
 function HowItWorks() {
   return (
-    <section className="how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
+    <section className="how-it-works reveal" id="how-it-works" aria-labelledby="how-it-works-title">
       <p className="section-eyebrow">How it works</p>
       <h2 className="section-title" id="how-it-works-title">
         Redact first. Prompt second. Restore after.
@@ -565,7 +608,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
 
 function Faq() {
   return (
-    <section className="faq" id="faq" aria-labelledby="faq-title">
+    <section className="faq reveal" id="faq" aria-labelledby="faq-title">
       <p className="section-eyebrow">FAQ</p>
       <h2 className="section-title" id="faq-title">
         Common questions
@@ -584,7 +627,7 @@ function Faq() {
 
 function Cta() {
   return (
-    <section className="cta" aria-labelledby="cta-title">
+    <section className="cta reveal" aria-labelledby="cta-title">
       <p className="section-eyebrow">Validation</p>
       <h2 className="section-title" id="cta-title">
         Ready to test Trizla on your workflow?
